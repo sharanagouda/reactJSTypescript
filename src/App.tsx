@@ -4,16 +4,19 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import configureStore from './config/Store';
 import { BrowserRouter } from 'react-router-dom';
-import Main from './Main';
+// import Main from './Main';
+import TodoComponent from "./class_components/TodoProject/TodoComponent";
+
 
 const { persistor, store } = configureStore();
 
 const App: React.FC = () => {
+
     return (
         <Provider store={store}>
             <PersistGate persistor={persistor}>
                 <BrowserRouter>
-                    <Main />
+                    <TodoComponent />
                 </BrowserRouter>
             </PersistGate>
         </Provider>

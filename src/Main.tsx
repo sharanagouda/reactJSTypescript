@@ -9,6 +9,8 @@ import { AppBar, Toolbar, Typography, IconButton, makeStyles } from '@material-u
 import MenuIcon from '@material-ui/icons/Menu';
 import { Theme } from '@material-ui/core/styles';
 import './mainStyles.css';
+import TodoComponent from "./class_components/TodoProject/TodoComponent";
+
 
 const useStyles = makeStyles((theme: Theme) => ({
     root: {
@@ -29,6 +31,7 @@ function Routes() {
             <Route path="/home" exact component={Home} />
             <Route path="/contact" exact component={HelloComponent} />
             <Route path="/propsNav" exact component={PropsComponent} />
+            <Route path="/todo" exact component={TodoComponent} />
             <Route component={PageNotFound} />
         </Switch>
     );
@@ -69,6 +72,11 @@ const Navigation = () => (
             <li>
                 <NavLink exact activeClassName="current" to="/home">
                     home2
+                </NavLink>
+            </li>
+            <li>
+                <NavLink exact activeClassName="current" to="/todo">
+                    Todo
                 </NavLink>
             </li>
         </ul>
